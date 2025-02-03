@@ -1,8 +1,12 @@
 package List;
 
-public class ArrayList {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class TheArrayList {
     public static void main(String[] args) {
-        java.util.ArrayList<Integer> list = new java.util.ArrayList<>();
+        ArrayList<Integer> list = new java.util.ArrayList<>();
         list.add(1); // --> 0
         list.add(22);// --> 1
         list.add(94);// --> 2
@@ -38,5 +42,21 @@ public class ArrayList {
         for (int a : list) {
             System.out.println(a); // --> insert element in index 1 i.e 77
         }
+
+        List<String> stringList = new ArrayList<>();
+        System.out.println(list.getClass().getName());
+
+        List<String> list1 = Arrays.asList("Monday", "Tuesday");
+        System.out.println(list1.getClass().getName());
+        list1.set(1, "Wednesday");
+        System.out.println(list1.get(1));
+
+        String[] array = {"Apple", "Banana", "Cherry"};
+        List<String> list2 = Arrays.asList(array);
+        System.out.println(list2.getClass().getName());
+
+        List<String> list3 = new ArrayList<>(list2);
+        list3.add("Mango");
+        System.out.println(list3);
     }
 }
