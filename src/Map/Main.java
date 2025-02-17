@@ -1,11 +1,13 @@
+package Map;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
-class Student{
-    private String name;
-    private double gpa;
+class Student implements Comparable<Student>{
+    private final String name;
+    private final double gpa;
 
     public Student(String name, double gpa) {
         this.name = name;
@@ -19,6 +21,32 @@ class Student{
     public double getGpa() {
         return gpa;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Double.compare(gpa, student.gpa) == 0 && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, gpa);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", gpa=" + gpa +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Double.compare(o.getGpa(), this.getGpa());
+    }
 }
 
 public class Main {
@@ -30,8 +58,8 @@ public class Main {
         students.add(new Student("Kevin", 3.1));
 
 
-//        Comparator<Student> comparator = Comparator.comparing(Student::getGpa); // aces
-//        Comparator<Student> comparator = Comparator.comparing(Student::getGpa).reversed(); // desc
+//        Comparator<Map.Student> comparator = Comparator.comparing(Map.Student::getGpa); // aces
+//        Comparator<Map.Student> comparator = Comparator.comparing(Map.Student::getGpa).reversed(); // desc
         Comparator<Student> comparator = Comparator.comparing(Student::getGpa).reversed().thenComparing(Student::getName); // sort according to name and then GPA
 
 //        students.sort((o1, o2) -> (int) (o2.getGpa() - o1.getGpa()));
@@ -54,7 +82,5 @@ public class Main {
         for(Student s : students) {
             System.out.println(s.getName() + ": " + s.getGpa());
         }
-
-
     }
 }

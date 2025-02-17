@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 class Image {
-    private String name;
+    private final String name;
 
     public Image(String name) {
         this.name = name;
@@ -25,8 +25,8 @@ class Image {
     }
 
     public static void loadCache(Map<String, Image> imageCache){
-        String a1 = new String("image1");
-        String a2 = new String("image2");
+        String a1 = "image1";
+        String a2 = "image2";
         imageCache.put(a1, new Image("Image 1"));
         imageCache.put(a2, new Image("Image 2"));
     }

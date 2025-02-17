@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class theIdentityHashMap {
     public static void main(String[] args) {
-        String key1 = new String("key");
-        String key2 = new String("key");
+        String key1 = "key";
+        String key2 = "key";
         System.out.println(System.identityHashCode(key1));
         System.out.println(System.identityHashCode(key2));
         System.out.println(key1.hashCode());

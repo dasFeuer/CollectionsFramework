@@ -4,7 +4,7 @@ public class theHash {
     public static int simpleHashMethod(String key){
         int sum = 0;
         for(char c : key.toCharArray()){
-            sum += (int) c;
+            sum += c;
         }
         return sum % 10;
     }
