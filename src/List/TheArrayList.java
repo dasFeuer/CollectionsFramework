@@ -2,14 +2,16 @@ package List;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class TheArrayList {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new java.util.ArrayList<>();
-        list.add(1); // --> 0
-        list.add(22);// --> 1
-        list.add(94);// --> 2
+//        List<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1); // --> 0 index
+        list.add(22);// --> 1 index
+        list.add(94);// --> 2 index
 
         System.out.println(list.get(2));
         System.out.println(list.size());
@@ -18,18 +20,18 @@ public class TheArrayList {
             System.out.println(list.get(i));
         }
 
-        for (int a : list) {
+        for (int a : list) { // --> for each loop
             System.out.println(a);
         }
 
         System.out.println(list.contains(94)); // --> true
-        System.out.println(list.contains(7));// --> false\
+        System.out.println(list.contains(7));// --> false
 
         list.set(2, 55); // --> Integer in index 2 will be replaced from 94 to 55;
         for (int a : list) {
             System.out.println(a);
         }
-        // oR
+        // OR
         System.out.println(list);
 
         list.remove(2);
@@ -58,5 +60,29 @@ public class TheArrayList {
         List<String> list3 = new ArrayList<>(list2);
         list3.add("Mango");
         System.out.println(list3);
+
+        List<Integer> newList = new ArrayList<>();
+        newList.add(1);
+        newList.add(2);
+        newList.add(3);
+
+        newList.remove(Integer.valueOf(1));
+        System.out.println("-->" + newList);
+
+        Object[] array1 = newList.toArray();
+        Integer[] array2 = newList.toArray(new Integer[0]);
+
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+
+        newList.add(8);
+        newList.add(5);
+        newList.add(9);
+
+        Collections.sort(newList);
+
+//        newList.sort(null);
+
+        System.out.println(newList); // --> [2, 3, 5, 8, 9]
     }
 }
