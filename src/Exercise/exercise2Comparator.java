@@ -115,9 +115,10 @@ public class exercise2Comparator {
         );
 
         // Print the sorted list
-        for (Student student : students) {
-            System.out.println(student);
-        }
+
+//        for (Student student : students) {
+//            System.out.println(student);
+//        }
 
         students.forEach(System.out::println);
     }
