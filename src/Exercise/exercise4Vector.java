@@ -3,7 +3,7 @@ package Exercise;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class exercise3Vector {
+public class exercise4Vector {
     public static void main(String[] args) {
         /*
         🧠 What is a Vector?
