@@ -1,4 +1,4 @@
-package Exercise;
+package Exercise.ListExercise;
 
 import java.util.LinkedList;
 import java.util.Scanner;
