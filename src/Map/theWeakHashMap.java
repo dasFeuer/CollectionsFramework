@@ -14,7 +14,9 @@ class Image {
     public String toString() {
         return name;
     }
-}public class theWeakHashMap {
+}
+
+public class theWeakHashMap {
     public static void main(String[] args) {
         WeakHashMap<String, Image> imageCache = new WeakHashMap<>();
         loadCache(imageCache);
