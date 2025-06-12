@@ -6,6 +6,9 @@ public class EnumMap {
     enum Day{
         MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
     }
+
+    // Faster than HashMap
+    // Memory efficient
     public static void main(String[] args) {
         Map<Day, String> map = new java.util.EnumMap<>(Day.class);
         map.put(Day.MONDAY, "Code");
