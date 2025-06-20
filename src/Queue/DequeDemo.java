@@ -2,6 +2,7 @@ package Queue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
 public class DequeDemo {
     public static void main(String[] args) {
@@ -71,7 +72,7 @@ public class DequeDemo {
             System.out.println(num);
         }
 
-        Deque<Integer> deque1 = new ArrayDeque<>(); // Insertion, deletion somewhere in the middle
-
+        Deque<Integer> deque1 = new LinkedList<>(); // Insertion, deletion somewhere in the middle
+        deque1.remove();
     }
 }
